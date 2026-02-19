@@ -89,6 +89,7 @@
     .cookie-banner p { color: #ccc; }
     .cookie-btn { background: var(--unibo); color: white; border: none; padding: 8px 22px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; white-space: nowrap; transition: background 0.2s; }
     .cookie-btn:hover { background: var(--navy); }
+    .subtitle { font-size: 16px; color: var(--white); font-weight: 600; }
 
     @media (max-width: 800px) { main { grid-template-columns: 1fr; } .member-list { grid-template-columns: 1fr; } .header-inner { flex-direction: column; padding: 12px 16px; gap: 6px; } nav { justify-content: center; } }
   </style>
@@ -134,12 +135,12 @@ const CONFIG = {
   // ── WORKSHOP INFO ──────────────────────────────────────────────────────────
   workshop: {
     shortName:   "IEEE W2R-HEALTH 2026",           // Appears in header, hero, browser tab
-    edition:     "Nth Edition · 2026",           // Gold badge on hero
-    fullName:    "The Nth International Workshop on intelligent environments for personalized healthcare",
-    subtitle:    "Topic and Subtopic",
+    edition:     "1st Edition · 2026",           // Gold badge on hero
+    fullName:    "<strong>The 1st International Workshop on intelligent environments for personalized healthcare</strong>",
+    subtitle:    "Wearable and Robotic Systems for Intelligent Healthcare Environments",
     description: [
       // Each string = one paragraph on the home page
-      "<strong>The Nth International Workshop on intelligent environments for personalized healthcare (W2R-HEALTH 2026) </strong> is organized in conjunction with <strong>IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks 2026 (IEEE WOWMOM 2026)</strong>, a top conference on networking in the research community, which will be held in Bologna, on June 16-19, 2026.", 
+      "<strong>The 1st International Workshop on intelligent environments for personalized healthcare (W2R-HEALTH 2026) </strong> is organized in conjunction with <strong>IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks 2026 (IEEE WOWMOM 2026)</strong>, a top conference on networking in the research community, which will be held in Bologna, on June 16-19, 2026.", 
       "<strong>The W2R-HEALTH workshop focuses on the integration of wearable IoT technologies and robotic systems to create intelligent healthcare spaces capable of supporting personalized care, remote health monitoring, and rehabilitation </strong>.", 
       "The scientific motivation of the workshop builds on the rapid growth of research in Internet of Things (IoT) and humanoid robotics, and on the increasing opportunity to integrate these technologies to move toward the long-sought goal of personalized healthcare.", 
       "The W2R-HEALTH workshop aims to advance the discussion on smart health solutions for personalized healthcare by bridging engineering and life sciences. To this end, the workshop addresses critical topics spanning sensing technologies for remote monitoring, smart healthcare applications based on wearable IoT and mobile systems, next-generation robotic platforms for patient interaction, edge computing for privacy-preserving health data processing, AI techniques for personalized context recognition and diagnosis, and open challenges related to human–robot acceptance, security, and ethics.",
@@ -147,7 +148,7 @@ const CONFIG = {
     ],
     pastEditions: [
       // { label, url }
-      { label: "prova", url: "prova" },
+      // { label: "prova", url: "prova" },
     ],
   },
 
@@ -377,7 +378,6 @@ const pages = {
     const { cfp, submission, conference } = CONFIG;
     const paras  = cfp.intro.map(p => `<p>${p}</p>`).join('');
     const topics = cfp.topics.map(t => `<li>${t}</li>`).join('');
-    const feats  = cfp.features.map(f => `<span class="pill">${f}</span>`).join('');
     return `
     <div class="page-wrap">
       <div class="page-hero"><div class="page-hero-inner">
@@ -390,10 +390,8 @@ const pages = {
           <h3>Call for Papers</h3>
           ${paras}
           <ul>${topics}</ul>
-          <h4>Features</h4>
-          <div class="feature-pills">${feats}</div>
           <h4>Submission Rules</h4>
-          <p>Papers must be formatted in the standard IEEE two-column format that is used by the ${conference.name} main conference and must not exceed <strong>${submission.maxPages} pages in length</strong> (including references). All submitted papers will go through a peer review process, and all accepted papers which are presented by one of the authors at the workshop will be published in the <strong>${conference.name} proceedings and IEEE Xplore</strong>.</p>
+          <p>Papers must be formatted in the <strong>standard IEEE two-column format</strong> that is used by the <strong>${conference.name} main conference</strong> and must not exceed <strong>${submission.maxPages} pages in length</strong> (including references). All submitted papers will go through a peer review process, and all accepted papers which are presented by one of the authors at the workshop will be published in the <strong>${conference.name} proceedings and IEEE Xplore</strong>.</p>
           <div class="submit-box"><a href="${submission.edas}" target="_blank">Submit via EDAS</a></div>
         </article>
         ${sidebar()}
@@ -444,17 +442,16 @@ const pages = {
         <article class="content">
           <h2>Paper Submission</h2>
           <h3>Submit a paper</h3>
-          <p>Papers must be formatted in the standard <strong>IEEE two-column format</strong> used by the ${conference.name} main conference and must not exceed <strong>SIX pages in length</strong> (including references). All submitted papers will go through a peer review process, and all accepted papers which are presented by one of the authors at the workshop will be published in the <strong>${conference.name} proceedings and IEEE Xplore</strong>.</p>
+          <p> Accepted papers will be included in the <strong>IEEE WoWMoM 2026 conference proceedings</strong>, published in the <strong>IEEE Xplore Digital Library</strong>.
+              Submissions must follow the <strong>two-column IEEE conference style and must not exceed 6 pages in length</strong>. Papers must be submitted through <strong>EDAS</strong>.
+              All submitted papers will undergo a rigorous peer-review process. Authors of accepted papers are required to ensure their work meets all IEEE publication requirements prior to the camera-ready deadline.
+              <strong>At least one author of each accepted paper must register for the conference at the full rate (IEEE member or non-member) and present the paper at the workshop</strong>. Failure to meet this requirement will result in exclusion from the proceedings. </p>
           <div class="submit-box"><a href="${submission.edas}" target="_blank">Submit a paper via EDAS</a></div>
           <h4>Formatting Guidelines</h4>
           <ul>
             <li>Use the standard IEEE two-column conference format</li>
             <li>Maximum ${submission.maxPages} pages including references</li>
-            <li>Original, unpublished work only</li>
-            <li>All accepted &amp; presented papers will appear in IEEE Xplore</li>
           </ul>
-          <h4>Review Process</h4>
-          <p>All submitted papers will go through a rigorous peer review process by the Technical Program Committee. Accepted papers presented by one of the authors at the workshop will be published in the ${conference.name} workshop proceedings and indexed on IEEE Xplore.</p>
         </article>
         ${sidebar()}
       </main>
