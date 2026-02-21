@@ -144,7 +144,7 @@ const CONFIG = {
       "<strong>The W2R-HEALTH workshop focuses on the integration of wearable IoT technologies and robotic systems to create intelligent healthcare spaces capable of supporting personalized care, remote health monitoring, and rehabilitation </strong>.", 
       "The scientific motivation of the workshop builds on the rapid growth of research in Internet of Things (IoT) and humanoid robotics, and on the increasing opportunity to integrate these technologies to move toward the long-sought goal of personalized healthcare.", 
       "The W2R-HEALTH workshop aims to advance the discussion on smart health solutions for personalized healthcare by bridging engineering and life sciences. To this end, the workshop addresses critical topics spanning sensing technologies for remote monitoring, smart healthcare applications based on wearable IoT and mobile systems, next-generation robotic platforms for patient interaction, edge computing for privacy-preserving health data processing, AI techniques for personalized context recognition and diagnosis, and open challenges related to human–robot acceptance, security, and ethics.",
-      "The workshop aims to foster interdisciplinary discussion on how wearable and robotic technologies can jointly shape the next generation of personalized, intelligent healthcare environments, encouraging interaction among participants, stimulating collaboration, and laying the groundwork for future initiatives such as joint research projects."
+      "The workshop aims to foster interdisciplinary discussion on how wearable and robotic technologies can jointly shape the next generation of personalized, intelligent healthcare environments, encouraging interaction among participants, stimulating collaboration, and laying the groundwork for future initiatives such as joint research projects.",
     ],
     pastEditions: [
       // { label, url }
@@ -206,10 +206,25 @@ const CONFIG = {
   cfp: {
     intro: [
       // Each string = one paragraph
-      "The W2R-HEALTH workshop focuses on the integration of wearable IoT technologies and robotic systems to create intelligent healthcare spaces capable of supporting personalized care, remote health monitoring, and rehabilitation. The scientific motivation of the workshop builds on the rapid growth of research in Internet of Things (IoT) and humanoid robotics, and on the increasing opportunity to integrate these technologies to move toward the long-sought goal of personalized healthcare. The W2R-HEALTH workshop aims to advance the discussion on smart health solutions for personalized healthcare by bridging engineering and life sciences. To this end, the workshop addresses critical topics spanning sensing technologies for remote monitoring, smart healthcare applications based on wearable IoT and mobile systems, next-generation robotic platforms for patient interaction, edge computing for privacy-preserving health data processing, AI techniques for personalized context recognition and diagnosis, and open challenges related to human–robot acceptance, security, and ethics. The workshop aims to foster interdisciplinary discussion on how wearable and robotic technologies can jointly shape the next generation of personalized, intelligent healthcare environments,encouraging interaction among participants, stimulating collaboration, and laying the groundwork for future initiatives such as joint research projects."
+      "The W2R-HEALTH workshop focuses on the integration of wearable IoT technologies and robotic systems to create intelligent healthcare spaces capable of supporting personalized care, remote health monitoring, and rehabilitation. The scientific motivation of the workshop builds on the rapid growth of research in Internet of Things (IoT) and humanoid robotics, and on the increasing opportunity to integrate these technologies to move toward the long-sought goal of personalized healthcare. The W2R-HEALTH workshop aims to advance the discussion on smart health solutions for personalized healthcare by bridging engineering and life sciences. To this end, the workshop addresses critical topics spanning sensing technologies for remote monitoring, smart healthcare applications based on wearable IoT and mobile systems, next-generation robotic platforms for patient interaction, edge computing for privacy-preserving health data processing, AI techniques for personalized context recognition and diagnosis, and open challenges related to human–robot acceptance, security, and ethics. The workshop aims to foster interdisciplinary discussion on how wearable and robotic technologies can jointly shape the next generation of personalized, intelligent healthcare environments,encouraging interaction among participants, stimulating collaboration, and laying the groundwork for future initiatives such as joint research projects.",
+      "The list of topics includes—but is not limited to—the following:",
     ],
     topics: [
-      "...",
+      "Wearable sensing and body-area networks for healthcare monitoring",
+      "IoT architectures and platforms for smart healthcare environments",
+      "Context-aware and personalized healthcare applications",
+      "Human activity recognition and behavioral modeling for health assessment",
+      "Physiological and stress-related sensing and data fusion techniques",
+      "Humanoid and mobile robots for healthcare assistance and rehabilitation",
+      "Human–robot interaction in healthcare and assistive environments",
+      "AI-based planning, reasoning, and decision-making for personalized care",
+      "Knowledge representation and ontologies for intelligent healthcare spaces",
+      "Edge and fog computing for real-time and privacy-preserving health data processing",
+      "Machine learning and federated learning techniques for healthcare analytics",
+      "Wireless, mobile, and multimedia networking solutions for smart healthcare systems",
+      "Security, privacy, and trust in IoT- and robot-enabled healthcare environments",
+      "Ethical, legal, and social implications of intelligent healthcare technologies",
+      "Clinical validation, user acceptance, and real-world deployment of smart healthcare systems",
     ],
     features: [
       "Best Paper Award (sponsored by XXX)",
@@ -234,9 +249,19 @@ const CONFIG = {
       { name: "Alfonso Esposito", affiliation: "University of Bologna, Italy" },
     ],
     programCommittee: [
-      // { name, affiliation }
-      { name: "Angelo Trotta",           affiliation: "University of Bologna" },
-      { name: "Ivan Zyrianoff",          affiliation: "University of Bologna" },
+      { name: "Prof. Shiwen Mao", affiliation: "Auburn University, USA" },
+      { name: "Prof. Chiara Garibotto", affiliation: "University of Genova, Italy" },
+      { name: "Prof. Kaushik Chowdhury", affiliation: "University of Texas at Austin, USA" },
+      { name: "Prof. Pietro Manzoni", affiliation: "Universitat Politecnica de Valencia, Spain" },
+      { name: "Prof. Carlos Kamienski", affiliation: "UFABC, Brazil" },
+      { name: "Prof. Ruidong Li", affiliation: "Kanazawa University, Japan" },
+      { name: "Prof. Berk Canberk", affiliation: "Edinburgh Napier University, UK" },
+      { name: "Prof. Danny Ruijters", affiliation: "Eindhoven University of Technology, NL" },
+      { name: "Prof. Raffaele Gravina", affiliation: "Università della Calabria, Italy" },
+      { name: "Prof. Antonio Pulafito", affiliation: "Università degli Studi di Messina, Italy" },
+      { name: "Prof. Giulia Spaletta", affiliation: "University of Bologna, Italy" },
+      { name: "Dr. Claudio Masolo", affiliation: "National Research Council of Italy, Italy" },
+      { name: "Dr. Roberto Rivera", affiliation: "RIV Capital Inc, Dubai, UAE" },
     ],
   },
 
@@ -244,11 +269,11 @@ const CONFIG = {
   program: null,   // e.g. "<p>Session 1: ...</p>"
   keynote: `
   <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
-    <img src="W2R-Health/immagini/guido_rocco_speaker.png" alt="Guido Rocco" style="width:160px; height:160px; object-fit:cover; border-radius:4px; flex-shrink:0;">
+    <img src="./immagini/guido_rocco_speaker.png" alt="Guido Rocco" style="width:160px; height:160px; object-fit:cover; border-radius:4px; flex-shrink:0;">
     <div>
       <h3 style="margin:0 0 4px;">Guido Rocco</h3>
       <p style="margin:0 0 12px; color:var(--blue); font-weight:600;">RIV Capital, Dubai</p>
-      <p style="margin:0 0 16px;"><em>"Funding Medical Autonomy: Transparent, Milestone-Based Financing with Blockchain"</em></p>
+      <p style="margin:0 0 16px;"><em><strong>Funding Medical Autonomy: Transparent, Milestone-Based Financing with Blockchain</strong></em></p>
       <p>Guido Rocco is Chief Operating Officer at RIV Capital and former Manager at IBM, where he led blockchain and AI consulting engagements. He holds a Master of Science in Mathematics from the University of Bologna.</p>
     </div>
   </div>
