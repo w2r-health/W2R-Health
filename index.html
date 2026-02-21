@@ -242,7 +242,17 @@ const CONFIG = {
 
   // ── PROGRAM & KEYNOTE (set to null to show "TBD", or fill with HTML string)
   program: null,   // e.g. "<p>Session 1: ...</p>"
-  keynote: null,   // e.g. "<p><strong>Prof. John Doe</strong> — MIT<br>Title: ..."
+  keynote: `
+  <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+    <img src="W2R-Health/immagini/guido_rocco_speaker.png" alt="Guido Rocco" style="width:160px; height:160px; object-fit:cover; border-radius:4px; flex-shrink:0;">
+    <div>
+      <h3 style="margin:0 0 4px;">Guido Rocco</h3>
+      <p style="margin:0 0 12px; color:var(--blue); font-weight:600;">RIV Capital, Dubai</p>
+      <p style="margin:0 0 16px;"><em>"Funding Medical Autonomy: Transparent, Milestone-Based Financing with Blockchain"</em></p>
+      <p>Guido Rocco is Chief Operating Officer at RIV Capital and former Manager at IBM, where he led blockchain and AI consulting engagements. He holds a Master of Science in Mathematics from the University of Bologna.</p>
+    </div>
+  </div>
+`,   // e.g. "<p><strong>Prof. John Doe</strong> — MIT<br>Title: ..."
 
 };
 
