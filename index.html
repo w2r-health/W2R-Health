@@ -73,6 +73,7 @@
     .date-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.07em; }
     .date-value { font-size: 13.5px; font-weight: 600; color: var(--navy); }
     .date-value.extended { color: var(--red); }
+    .date-highlight { background: #fff3cd; color: var(--red); padding: 1px 4px; border-radius: 3px; font-style: normal; }
     .wowmom-block { text-align: center; padding: 14px 18px; }
     .wowmom-block a { color: var(--unibo); font-weight: 600; text-decoration: none; font-size: 14px; display: block; }
     .wowmom-block a:hover { text-decoration: underline; }
@@ -164,9 +165,9 @@ const CONFIG = {
   dates: [
     // { label, value, highlight: true/false }
     // highlight:true → shown in red (e.g. extended deadlines)
-    { label: "Submission Deadline ", value: "March 22, 2026",  highlight: true  },
-    { label: "Notification",                   value: "April 12, 2026",  highlight: false },
-    { label: "Camera Ready",                   value: "April 26, 2026", highlight: false },
+    { label: "Submission Deadline (extended)", value: "April 10, 2026", old_value: "March 22, 2026", highlight: true  },
+    { label: "Notification",                   value: "April 30, 2026", old_value: "April 12, 2026", highlight: true },
+    { label: "Camera Ready",                   value: "May 15, 2026",  old_value: "April 26, 2026", highlight: true },
     { label: "Presentation",                   value: "June 16, 2026",      highlight: false },
   ],
 
@@ -263,6 +264,7 @@ const CONFIG = {
       // { name: "Prof. Giulia Spaletta", affiliation: "University of Bologna, Italy" },
       // { name: "Dr. Claudio Masolo", affiliation: "National Research Council of Italy, Italy" },
       // { name: "Dr. Roberto Rivera", affiliation: "RIV Capital Inc, Dubai, UAE" },
+      { name: "TBD"}
     ],
   },
 
@@ -301,7 +303,7 @@ function sidebar() {
   const dateRows = dates.map(d => `
     <div class="date-row">
       <span class="date-label">${d.label}</span>
-      <span class="date-value${d.highlight ? ' extended' : ''}">${d.value}</span>
+      <span class="date-value${d.highlight ? ' extended' : ''}">${d.old_value ? `<s>${d.old_value}</s> <mark class="date-highlight">${d.value}</mark>` : d.value}</span>
     </div>`).join('');
 
   const sponsorItems = sponsors.map(s => `
