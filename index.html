@@ -267,7 +267,61 @@ const CONFIG = {
   },
 
   // ── PROGRAM & KEYNOTE (set to null to show "TBD", or fill with HTML string)
-  program: null,   // e.g. "<p>Session 1: ...</p>"
+  program: `
+  <p>The workshop will be held on <strong>June 16, 2026</strong> in Bologna, Italy, in conjunction with IEEE WOWMOM 2026.</p>
+  <div style="border:1px solid var(--border); border-radius:6px; overflow:hidden; margin:18px 0;">
+
+    <div style="display:flex; gap:16px; padding:14px 18px; border-bottom:1px solid var(--border);">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">15.00 – 15.10</div>
+      <div><strong style="color:var(--navy);">Opening</strong></div>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:14px 18px; border-bottom:1px solid var(--border); background:var(--light-blue);">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">15.10 – 15.50</div>
+      <div>
+        <span class="tag" style="margin-bottom:6px;">Keynote</span>
+        <div><strong style="color:var(--navy);">Funding Medical Autonomy. Transparent, Milestone-Based Financing with Blockchain</strong></div>
+        <div style="color:var(--muted); font-size:13px; margin-top:3px;">Dr. Guido Rocco — RIV Capital</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:14px 18px; border-bottom:1px solid var(--border);">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">15.50 – 16.10</div>
+      <div>
+        <div style="color:var(--unibo); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Presentation #1</div>
+        <div><strong style="color:var(--navy);">Design Space Exploration of Edge AI for Assistive Vision on Low-Cost Embedded Systems</strong></div>
+        <div style="color:var(--muted); font-size:13px; margin-top:3px;">Nithin Prasad, Deesh Patel, Gary Grewal and Shawki Areibi (University of Guelph, Canada)</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:14px 18px; border-bottom:1px solid var(--border);">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">16.10 – 16.30</div>
+      <div>
+        <div style="color:var(--unibo); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Presentation #2</div>
+        <div><strong style="color:var(--navy);">The Big Inference Blueprint: a Post-Big Data Epistemology for AI in Healthcare</strong></div>
+        <div style="color:var(--muted); font-size:13px; margin-top:3px;">Marco Roccetti (University of Bologna, Italy)</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:14px 18px; border-bottom:1px solid var(--border);">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">16.30 – 16.50</div>
+      <div>
+        <div style="color:var(--unibo); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Presentation #3</div>
+        <div><strong style="color:var(--navy);">MyPhysio: An End-to-End IoT Platform for Remote Physiotherapeutic Monitoring</strong></div>
+        <div style="color:var(--muted); font-size:13px; margin-top:3px;">Milena Mazza, Alice Bonora, Alfonso Esposito, Federico Montori and Ivan Zyrianoff (University of Bologna, Italy)</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:16px; padding:14px 18px;">
+      <div style="flex-shrink:0; width:108px; font-weight:600; color:var(--navy); font-size:14px;">16.50 – 17.10</div>
+      <div>
+        <div style="color:var(--unibo); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Presentation #4</div>
+        <div><strong style="color:var(--navy);">Efficient Estimation of Three-Way Partial Volume Under the ROC Surface for Multi-Class Disease Staging</strong></div>
+        <div style="color:var(--muted); font-size:13px; margin-top:3px;">Vijay Yadav (New York University, USA)</div>
+      </div>
+    </div>
+
+  </div>`,   // e.g. "<p>Session 1: ...</p>"
   keynote: `
   <div style="display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
     <img src="./immagini/guido_rocco_speaker3.jpeg" alt="Guido Rocco" style="width:160px; height:160px; object-fit:cover; border-radius:4px; flex-shrink:0;">
