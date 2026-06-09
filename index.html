@@ -329,8 +329,17 @@ const CONFIG = {
       <h3 style="margin:0 0 4px;">Guido Rocco</h3>
       <p style="margin:0 0 12px; color:var(--blue); font-weight:600;">RIV Capital, Dubai</p>
       <p style="margin:0 0 16px;"><em><strong>Funding Medical Autonomy: Transparent, Milestone-Based Financing with Blockchain</strong></em></p>
-      <p>Guido Rocco is Chief Operating Officer at RIV Capital and former Manager at IBM, where he led blockchain and AI consulting engagements. He holds a Master of Science in Mathematics from the University of Bologna.</p>
+      <p>Guido Rocco is the Chief Operating Officer of RIV Capital, a holding of participations operating regulated digital-asset services across Europe and the Middle East. Holding a Master's Degree in Mathematics, he combines a quantitative background with eight years of operational experience at the intersection of technology and regulated financial markets. Before joining RIV Capital he worked in IBM's consulting practice in Italy, where he led blockchain, cloud and AI engagements for large Italian clients across energy, banking and the public sector.</p>
+      <p>At RIV Capital he has led the evolution of the group into a multinational fintech, including the conceptualisation and launch of three flagship products: RIV Wallet, StablePay and RIV Coin. He also followed the regulatory processes for the VARA Advisory licence in the United Arab Emirates and the European VASP authorisation in Italy. He is an authorised Financial Advisor under the Italian OCF (Organismo dei Consulenti Finanziari).</p>
+      <p>He has also served as Learning Facilitator for MIT – Professional Education, teaching about blockchain and digital assets to managers and entrepreneurs, and has participated in numerous speeches and panels about blockchain, crypto and stablecoins in Europe and the Gulf.</p>
     </div>
+  </div>
+  <div style="margin-top:24px;">
+    <h3 style="margin:0 0 8px;">Abstract</h3>
+    <p>Medical autonomy systems — autonomous and semi-autonomous surgical robots, AI diagnostic tools, closed-loop drug-delivery systems, smart clinical environments — are advancing rapidly, but their deployment is constrained as much by the difficulty of financing them as by their technical complexity. Capital must move between funders, hospitals, vendors and research teams whose progress is costly to verify and must be approved by multiple stakeholders under strict institutional and regulatory conditions. This talk examines that problem as a mechanism-design challenge.</p>
+    <p>We compare four reference financing structures: M0, conventional upfront grants and contracts; M1, traditional off-chain milestone tranching; M2, ledger-audited milestone escrow on a programmable smart contract; and M3, outcome-linked add-on payments. The baseline weakness of M0 — that capital is disbursed before progress can be fully validated — motivates the move to milestone-based structures, but the execution of M1 is itself slow, document-heavy and audit-fragmented.</p>
+    <p>We argue that blockchain is most usefully understood here not as a data-storage system but as a coordination, escrow and audit layer that supports conditional disbursement through programmable escrow, threshold authorisation by multiple verifiers, and tamper-evident logging of approvals and releases, while keeping all sensitive clinical and operational evidence off-chain. We formalise M2 as a hybrid architecture combining off-chain evidence repositories, digital attestations, oracle/relay mechanisms and on-chain escrow logic, and evaluate the trade-offs across mechanisms in terms of verification cost, dispute risk, settlement delay and capital lock-up.</p>
+    <p>The analysis shows that M2 is most advantageous when coordination frictions are high, when approval requires multiple independent actors, and when auditability is institutionally important — conditions that characterise public research grants, multi-centre clinical trials, and regulated R&amp;D consortia. The talk closes on the remaining bottleneck: credible off-chain attestation, robust governance design, and the qualification of research as an obligation of means — limits that the chain cannot eliminate but only translate efficiently into capital release.</p>
   </div>
 `,   // e.g. "<p><strong>Prof. John Doe</strong> — MIT<br>Title: ..."
 
@@ -550,6 +559,53 @@ const pages = {
       </main>
     </div>`;
   },
+
+  venue: () => {
+    const hotels = [
+      { name: 'Residence Petronio', stars: 3, walk: '8 min' },
+      { name: 'Residence Opera', stars: 3, walk: '9 min' },
+      { name: 'Hotel Palace Bologna', stars: 3, walk: '15 min' },
+      { name: 'Hotel University', stars: 3, walk: '15 min' },
+      { name: 'Hotel Roma', stars: 4, walk: '11 min' },
+      { name: 'Hotel Touring', stars: 4, walk: '9 min' },
+      { name: 'Art Hotel Orologio', stars: 4, walk: '11 min' },
+      { name: 'Art Hotel Novecento', stars: 4, walk: '12 min' },
+      { name: 'Hotel Porta San Mamolo', stars: 4, walk: '13 min' },
+    ];
+    const hotelItems = hotels.map(hh =>
+      `<li>${hh.name} <span style="color:var(--accent, #d4a017);">${'★'.repeat(hh.stars)}</span> <em style="color:var(--muted); font-size:13px;">(${hh.walk})</em></li>`
+    ).join('');
+    return `
+    <div class="page-wrap">
+      <div class="page-hero"><div class="page-hero-inner">
+        <div class="breadcrumb"><span onclick="navigate('home')">Home</span> › Venue</div>
+        <h1>Venue</h1>
+      </div></div>
+      <main>
+        <article class="content">
+          <h2>Conference Venue</h2>
+          <h3>Venue</h3>
+          <img src="./immagini/venue_san_giovanni_in_monte.jpg" alt="Aula Prodi — San Giovanni in Monte courtyard, Bologna" style="width:100%; height:auto; border-radius:4px; margin-bottom:16px;">
+          <p>Welcome to <strong>IEEE WoWMoM 2026</strong>! We are excited to host you in <strong>Aula Prodi</strong>, in the San Giovanni in Monte complex, located in the heart of Bologna, Italy. To ensure a smooth and enjoyable experience, please review the following transportation and lodging information.</p>
+
+          <h4>Conference Venue</h4>
+          <p>
+            <strong>Aula Prodi, San Giovanni in Monte</strong><br>
+            Piazza San Giovanni in Monte, 1/2 — 40100, Bologna<br>
+            Phone: <a href="tel:+39051263894">+39 051 263894</a><br>
+            <a href="https://www.unibo.it" target="_blank">Website</a><br>
+            Parking: Available in nearby locations for a fee.
+          </p>
+
+          <h4>Lodging Options</h4>
+          <p>Nearby hotels (within 15 min walking distance):</p>
+          <ul>${hotelItems}</ul>
+          <p>We recommend booking early to secure availability. We look forward to welcoming you to Bologna!</p>
+        </article>
+        ${sidebar()}
+      </main>
+    </div>`;
+  },
 };
 
 // ── ROUTER ───────────────────────────────────────────────────────────────────
@@ -580,6 +636,7 @@ function navigate(page) {
     { page: 'keynote',    label: 'Keynote' },
     { page: 'cfp',        label: 'Call for Papers' },
     { page: 'committees', label: 'Committees' },
+    { page: 'venue',      label: 'Venue' },
     { page: 'submit',     label: 'Submit a paper' },
   ];
 
