@@ -561,6 +561,7 @@ const pages = {
   },
 
   venue: () => {
+    const { workshop } = CONFIG;
     const hotels = [
       { name: 'Residence Petronio', stars: 3, walk: '8 min' },
       { name: 'Residence Opera', stars: 3, walk: '9 min' },
@@ -586,7 +587,7 @@ const pages = {
           <h2>Conference Venue</h2>
           <h3>Venue</h3>
           <img src="./immagini/venue_san_giovanni_in_monte.jpg" alt="Aula Prodi — San Giovanni in Monte courtyard, Bologna" style="width:100%; height:auto; border-radius:4px; margin-bottom:16px;">
-          <p>Welcome to <strong>IEEE WoWMoM 2026</strong>! We are excited to host you in <strong>Aula Prodi</strong>, in the San Giovanni in Monte complex, located in the heart of Bologna, Italy. To ensure a smooth and enjoyable experience, please review the following transportation and lodging information.</p>
+          <p>Welcome to <strong>${workshop.shortName}</strong>! We are excited to host you in <strong>Aula Prodi</strong>, in the San Giovanni in Monte complex, located in the heart of Bologna, Italy. To ensure a smooth and enjoyable experience, please review the following transportation and lodging information.</p>
 
           <h4>Conference Venue</h4>
           <p>
