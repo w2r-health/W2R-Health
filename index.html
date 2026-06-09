@@ -50,6 +50,7 @@
     .submit-box { text-align: center; padding: 28px; background: var(--light-blue); border: 1px solid var(--border); border-radius: 6px; margin: 22px 0; }
     .submit-box a { display: inline-block; background: var(--unibo); color: white; padding: 11px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; }
     .submit-box a:hover { background: var(--navy); }
+    a.disabled-btn { pointer-events: none; opacity: 0.5; cursor: not-allowed; background: var(--muted) !important; }
     .tbd-block { background: var(--light-blue); border: 1px dashed var(--border); border-radius: 6px; padding: 48px 32px; text-align: center; color: var(--muted); font-size: 16px; margin: 16px 0; }
     .tbd-block strong { display: block; font-size: 22px; color: var(--navy); margin-bottom: 8px; }
     .committee-section { margin-bottom: 28px; }
@@ -387,7 +388,7 @@ function sidebar() {
     <div class="card">
       <div class="card-header">Submission</div>
       <div class="edas-link-block">
-        <a href="${submission.edasSidebar}" target="_blank">EDAS link →</a>
+        <a class="disabled-btn" aria-disabled="true" title="Submissions are closed">EDAS link →</a>
       </div>
     </div>
     <div class="card">
@@ -411,7 +412,7 @@ const pages = {
         <div class="hero-badge">${workshop.edition}</div>
         <h1>${workshop.shortName}</h1>
         <h2>${workshop.fullName}</h2>
-        <a href="${submission.edas}" target="_blank" class="cta-btn">Submit a Paper</a>
+        <a class="cta-btn disabled-btn" aria-disabled="true" title="Submissions are closed">Submit a Paper</a>
       </div>
       <main>
         <article class="content">
@@ -420,7 +421,7 @@ const pages = {
           <h4>${workshop.subtitle}</h4>
           ${paras}
           <div class="submit-box">
-            <a href="${submission.edas}" target="_blank">Submit a paper</a>
+            <a class="disabled-btn" aria-disabled="true" title="Submissions are closed">Submit a paper</a>
           </div>
           <ul>${past}</ul>
         </article>
@@ -494,7 +495,7 @@ const pages = {
           <div class="features">${features}</div>
           <h4>Submission Rules</h4>
           <p>Papers must be formatted in the <strong>standard IEEE two-column format</strong> that is used by the <strong>${conference.name} main conference</strong> and must not exceed <strong>${submission.maxPages} pages in length</strong> (including references). All submitted papers will go through a peer review process, and all accepted papers which are presented by one of the authors at the workshop will be published in the <strong>${conference.name} proceedings and IEEE Xplore</strong>.</p>
-          <div class="submit-box"><a href="${submission.edas}" target="_blank">Submit via EDAS</a></div>
+          <div class="submit-box"><a class="disabled-btn" aria-disabled="true" title="Submissions are closed">Submit via EDAS</a></div>
         </article>
         ${sidebar()}
       </main>
@@ -548,7 +549,7 @@ const pages = {
               Submissions must follow the <strong>two-column IEEE conference style and must not exceed 6 pages in length</strong>. Papers must be submitted through <strong>EDAS</strong>.
               All submitted papers will undergo a rigorous peer-review process. Authors of accepted papers are required to ensure their work meets all IEEE publication requirements prior to the camera-ready deadline.
               <strong>At least one author of each accepted paper must register for the conference at the full rate (IEEE member or non-member) and present the paper at the workshop</strong>. Failure to meet this requirement will result in exclusion from the proceedings. </p>
-          <div class="submit-box"><a href="${submission.edas}" target="_blank">Submit a paper via EDAS</a></div>
+          <div class="submit-box"><a class="disabled-btn" aria-disabled="true" title="Submissions are closed">Submit a paper via EDAS</a></div>
           <h4>Formatting Guidelines</h4>
           <ul>
             <li>Use the standard IEEE two-column conference format</li>
