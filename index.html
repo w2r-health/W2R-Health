@@ -51,6 +51,7 @@
     .submit-box a { display: inline-block; background: var(--unibo); color: white; padding: 11px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 15px; transition: background 0.2s; }
     .submit-box a:hover { background: var(--navy); }
     a.disabled-btn { pointer-events: none; opacity: 0.5; cursor: not-allowed; background: var(--muted) !important; }
+    a.disabled-link { pointer-events: none; cursor: default; }
     .tbd-block { background: var(--light-blue); border: 1px dashed var(--border); border-radius: 6px; padding: 48px 32px; text-align: center; color: var(--muted); font-size: 16px; margin: 16px 0; }
     .tbd-block strong { display: block; font-size: 22px; color: var(--navy); margin-bottom: 8px; }
     .committee-section { margin-bottom: 28px; }
@@ -388,7 +389,7 @@ function sidebar() {
     <div class="card">
       <div class="card-header">Submission</div>
       <div class="edas-link-block">
-        <a class="disabled-btn" aria-disabled="true" title="Submissions are closed">EDAS link →</a>
+        <a class="disabled-link" aria-disabled="true" title="Submissions are closed">EDAS link →</a>
       </div>
     </div>
     <div class="card">
